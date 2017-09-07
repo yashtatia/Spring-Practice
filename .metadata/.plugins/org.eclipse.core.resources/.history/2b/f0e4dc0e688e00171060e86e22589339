@@ -1,0 +1,11 @@
+package com.pluralsight.service;
+
+import javax.validation.Valid;
+
+import com.flightbooking.model.User;
+
+public interface SignUpService {
+
+	User save(@Valid User user);
+
+}

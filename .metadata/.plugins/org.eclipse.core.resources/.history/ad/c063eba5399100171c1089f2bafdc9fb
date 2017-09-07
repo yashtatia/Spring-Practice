@@ -1,0 +1,135 @@
+package com.pluralsight.model;
+
+public class FlightSelected {
+
+	private String departure;
+	private String arriv;
+	private String seat_class;
+	private String seat_class_abbrev;
+	private String airline;
+
+	private int flight_id;
+
+	private int route_id;
+
+	private int vacancy;
+	private int price;
+	private int seats;
+	private int miles;
+	private String departure_time;
+	private String arrival_time;
+	private String duration;
+
+	public String getAirline() {
+		return airline;
+	}
+
+	public String getArriv() {
+		return arriv;
+	}
+
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public String getDepart() {
+		return departure;
+	}
+
+	public String getDeparture_time() {
+		return departure_time;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public int getFlight_id() {
+		return flight_id;
+	}
+
+	public int getMiles() {
+		return miles;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public int getRoute_id() {
+		return route_id;
+	}
+
+	public String getSeat_class() {
+		return seat_class;
+	}
+
+	public String getSeat_class_abbrev() {
+		return seat_class_abbrev;
+	}
+
+	public int getSeats() {
+		return seats;
+	}
+
+	public int getVacancy() {
+		return vacancy;
+	}
+
+	public void setAirline(String airline) {
+		this.airline = airline;
+	}
+
+	public void setArriv(String arriv) {
+		this.arriv = arriv;
+	}
+
+	public void setArrival_time(String arrival_time) {
+		this.arrival_time = arrival_time;
+	}
+
+	public void setDepart(String depart) {
+		this.departure = depart;
+	}
+
+	public void setDeparture_time(String departure_time) {
+		this.departure_time = departure_time;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public void setFlight_id(int flight_id) {
+		this.flight_id = flight_id;
+	}
+
+	public void setMiles(int miles) {
+		this.miles = miles;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setRoute_id(int route_id) {
+		this.route_id = route_id;
+	}
+
+	public void setSeat_class(String seat_class) {
+		this.seat_class = seat_class;
+	}
+
+	public void setSeat_class_abbrev(String seat_class_abbrev) {
+		this.seat_class_abbrev = seat_class_abbrev;
+	}
+
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
+	public void setVacancy(int vacancy) {
+		this.vacancy = vacancy;
+	}
+
+}

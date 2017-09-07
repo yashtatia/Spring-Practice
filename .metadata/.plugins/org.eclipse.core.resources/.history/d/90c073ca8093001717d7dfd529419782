@@ -1,0 +1,167 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<jsp:include page="header.jsp" />
+	<div class="row" style="margin-top:140px;">
+	
+				<div class="card">
+					<div class="card-header">
+						
+					</div>
+					<div class="card-body">
+						<div class="row row-content">
+							<div class="col-6">
+								<span>Carrier info</span>
+							</div>
+							<div class="col-6 text-right">
+								<span>PNR</span>
+							</div>
+						</div>
+						<div class="row row-content">
+							<div class="col-3">
+								<div>
+									<span>departure time</span>
+									<span>departure id</span>
+									<span>departure name</span>
+								</div>
+							</div>
+							<div class="col-6 text-center">
+								<div>
+									<span>duration</span>
+									<div>
+										<span>----</span>
+										<i>flight icon</i>
+									</div>
+								</div>
+							</div>
+							<div class="col-3" style="width: 75%;">
+								<div>
+									<span>arrival time</span>
+									<span>arrival id</span>
+									<span>arrival name</span>
+								</div>
+							</div>
+						</div>
+						<div>
+							page break
+						</div>
+						<div class="container">
+							<div class="row row-content">
+								<span>
+									<span>Depart:</span>
+									<span>Airport name</span>
+								</span>
+								<div class="row row-content">
+									<div class="col-3">
+										<span>travel Date</span>
+										<span>date</span>
+									</div>
+									<div class="col-3">
+										<span>depart</span>
+										<span>time</span>
+									</div>
+									<div class="col-3">
+										<span>gate</span>
+										<span>---</span>
+									</div>
+									<div class="col-3">
+										<span>terminal</span>
+										<span>---</span>
+									</div>
+								</div>
+							</div>
+							<div class="row row-content">
+								<span>
+									<span>arrival:</span>
+									<span>Airport name</span>
+								</span>
+								<div class="row row-content">
+									<div class="col-3">
+										<span>travel Date</span>
+										<span>date</span>
+									</div>
+									<div class="col-3">
+										<span>arrival</span>
+										<span>time</span>
+									</div>
+									<div class="col-3">
+										<span>gate</span>
+										<span>---</span>
+									</div>
+									<div class="col-3">
+										<span>terminal</span>
+										<span>---</span>
+									</div>
+								</div>
+							</div>
+							<div class="row row-content">
+								<div class="row">
+									<div class="col-6">
+										<span>Passenger</span>
+									</div>
+									<div class="col-6">
+										<span>Type</span>
+									</div>
+								</div>
+								<div>list</div>
+							</div>
+							<div class="row row-content">
+								<div class="col-6">
+									<span>Transaction Amount</span>
+									<span>Cost</span>
+								</div>
+							</div>
+							<div class="row row-content">
+								<div class="col-6">
+									<span>Payment Method</span>
+									<span>method</span>
+								</div>
+								<div class="col-6">
+									<span>card number incripted</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2><strong>Ticket Itinerary</strong></h2>
+					<table class="table">
+						<tr>
+							<td colspan="2">
+								Flight : ${itinerary.source_id} - ${itinerary.source_name} <i class="fa fa-plane" aria-hidden="true"></i> ${itinerary.destination_id} - ${itinerary.destination_name}
+							</td>
+							<td colspan="2">
+								${itinerary.fname} - ${itinerary.lname}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Booking ID : ${itinerary.booking_id}  
+								Carrier : ${itinerary.carrier_id} - ${itinerary.carrier_name}
+							</td>
+							<td>
+								${itinerary.source_id} - ${itinerary.source_name}
+							</td>
+							<td><i class="fa fa-plane" aria-hidden="true" style="font-size: 20px;"></i></td>
+							<td>
+								${itinerary.destination_id} - ${itinerary.destination_name}
+							</td>
+						</tr>
+						<tr>
+							<td>Seat Type : ${itinerary.seat_type}</td>
+							<td>Seats Booked : ${itinerary.seats}</td>
+							<td>Seat Numbers : ${itinerary.seat_numbers}</td>
+							<td>Total Fare : ${itinerary.total_fare}</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<button class="btn btn-primary" onclick="window.print()">Print Ticket</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+<jsp:include page="footer.jsp" />

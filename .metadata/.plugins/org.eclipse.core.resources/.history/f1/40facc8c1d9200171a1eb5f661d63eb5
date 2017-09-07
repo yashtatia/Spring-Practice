@@ -1,0 +1,100 @@
+package com.pluralsight.model;
+
+public class MyBookingsReport {
+
+	private String source_id;
+
+	private String source_name;
+	private String destination_id;
+	private String destination_name;
+	private String carrier_id;
+	private String carrier_name;
+	private String seat_type;
+	private String seats;
+	private String total_amount;
+
+	public MyBookingsReport(String source_id, String source_name, String destination_id, String destination_name,
+			String carrier_id, String carrier_name, String seat_type, String seats, String total_amount) {
+		this.source_id = source_id;
+		this.source_name = source_name;
+		this.destination_id = destination_id;
+		this.destination_name = destination_name;
+		this.carrier_id = carrier_id;
+		this.carrier_name = carrier_name;
+		this.seat_type = seat_type;
+		this.seats = seats;
+		this.total_amount = total_amount;
+	}
+
+	public String getCarrier_id() {
+		return carrier_id;
+	}
+
+	public String getCarrier_name() {
+		return carrier_name;
+	}
+
+	public String getDestination_id() {
+		return destination_id;
+	}
+
+	public String getDestination_name() {
+		return destination_name;
+	}
+
+	public String getSeat_type() {
+		return seat_type;
+	}
+
+	public String getSeats() {
+		return seats;
+	}
+
+	public String getSource_id() {
+		return source_id;
+	}
+
+	public String getSource_name() {
+		return source_name;
+	}
+
+	public String getTotal_amount() {
+		return total_amount;
+	}
+
+	public void setCarrier_id(String carrier_id) {
+		this.carrier_id = carrier_id;
+	}
+
+	public void setCarrier_name(String carrier_name) {
+		this.carrier_name = carrier_name;
+	}
+
+	public void setDestination_id(String destination_id) {
+		this.destination_id = destination_id;
+	}
+
+	public void setDestination_name(String destination_name) {
+		this.destination_name = destination_name;
+	}
+
+	public void setSeat_type(String seat_type) {
+		this.seat_type = seat_type;
+	}
+
+	public void setSeats(String seats) {
+		this.seats = seats;
+	}
+
+	public void setSource_id(String source_id) {
+		this.source_id = source_id;
+	}
+
+	public void setSource_name(String source_name) {
+		this.source_name = source_name;
+	}
+
+	public void setTotal_amount(String total_amount) {
+		this.total_amount = total_amount;
+	}
+}

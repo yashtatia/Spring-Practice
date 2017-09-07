@@ -1,0 +1,47 @@
+package com.pluralsight.service;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pluralsight.model.Airport;
+import com.pluralsight.model.Flight;
+import com.pluralsight.model.FlightSearch;
+import com.pluralsight.model.SeatType;
+import com.pluralsight.repository.AirportSearchRepository;
+import com.pluralsight.repository.FlightSearchRepository;
+import com.pluralsight.repository.SeatSearchRepository;
+
+@Service("flightSearchServiceImpl")
+public class FlightSearchServiceImpl implements FlightSearchService {
+
+	@Autowired
+	private FlightSearchRepository flightSearchRepository;
+	
+	@Autowired
+	private SeatSearchRepository seatSearchRepository;
+	
+	@Autowired
+	private AirportSearchRepository airportSearchRepository;
+	
+	@Override
+	public List<Flight> findAllFlights(FlightSearch flightSearch) {
+			
+	//		return flightSearchRepository.findAllFlights(flightSearch);
+		return new LinkedList<Flight>();
+		}
+	
+	@Override
+	public List<SeatType> findAll() {
+		return seatSearchRepository.findAll();
+	}
+
+	@Override
+	public List<Airport> getFlightAjaxList(String query) {
+		return airportSearchRepository.findAllFlights(query);
+	}
+}

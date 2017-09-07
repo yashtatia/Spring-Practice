@@ -1,0 +1,12 @@
+package com.pluralsight.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MyBookingsController {
+
+	@RequestMapping(value="myBookings", method=RequestMethod.GET)
+	public String getBookings() {
+		return "myBookings";
+	}
+}

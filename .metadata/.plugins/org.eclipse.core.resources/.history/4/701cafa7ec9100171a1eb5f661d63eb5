@@ -1,0 +1,107 @@
+package com.pluralsight.controller;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.pluralsight.model.FlightSelected;
+import com.pluralsight.model.LogInDetails;
+import com.pluralsight.model.PaymentForm;
+import com.pluralsight.model.User;
+import com.pluralsight.service.MakePaymentService;
+import com.pluralsight.service.SignUpService;
+
+@Controller
+@SessionAttributes({"payment", "logInForm", "flightSelected"})
+public class MakePaymentController {
+	
+	@Autowired
+	private MakePaymentService makePaymentService;
+
+	@Autowired
+	private SignUpService signUpService;
+	
+	@RequestMapping(value="makePayment", method=RequestMethod.GET)
+	public String addPaymentDetails(@ModelAttribute("flightSelected") FlightSelected flightSelected, @ModelAttribute("logInForm") LogInDetails logInForm, Model model, HttpSession session) {
+		
+		System.out.println("makepayment - get");
+		//check if user already logged in
+		System.out.println(logInForm.isLoggedIn());
+		System.out.println(flightSelected.getPrice());
+		if(logInForm == null || logInForm.isLoggedIn() == false) {
+			System.out.println("Not logged in");
+			return "redirect:signUp.html";
+		}
+		System.out.println(flightSelected.getFlight_id());
+		
+		PaymentForm payment = (PaymentForm)session.getAttribute("payment");
+		if (payment == null) {
+			payment = new PaymentForm();
+		}
+		model.addAttribute("payment", payment);
+		
+		int[] fare = makePaymentService.getFare(flightSelected.getFlight_id(), flightSelected.getSeat_class_abbrev(), flightSelected.getSeats(), flightSelected.getUser_air_miles());
+		
+		model.addAttribute("fare_with_miles", fare[0]);
+		model.addAttribute("fare_without_miles", fare[1]);
+		model.addAttribute("miles_remaining", fare[2]);
+		model.addAttribute("miles_earned", fare[3]);
+		model.addAttribute("miles_used", fare[4]);
+		model.addAttribute("discount", fare[5]);
+		
+		return "makePayment";
+	}
+	
+	@ModelAttribute("logInForm")
+	public LogInDetails getLogin() {
+		System.out.println("loginform invoked makePayment");
+		return new LogInDetails();
+	}
+	
+//	@ModelAttribute("userForm")
+//	public User getUser() {
+//		System.out.println("userform invoked makePayment");
+//		return new User();
+//	}
+	
+	@ModelAttribute("flightSelected")
+	public FlightSelected getFlightSelected() {
+		System.out.println("flightselected invoked makePayment");
+		return new FlightSelected();
+	}
+	
+	@RequestMapping(value="makePayment", method=RequestMethod.POST)
+	public String updatePaymentDetails(@Valid @ModelAttribute("payment") PaymentForm payment, @ModelAttribute("userForm") User userForm, BindingResult result) {
+		
+		System.out.println("makepayment - post");
+		
+		System.out.println("Result has errors: " + result.hasErrors());
+		System.out.println("Flight_id: " + payment.getFlight_id());
+		
+		payment.setUser_id(userForm.getEmail());
+		
+		if (result.hasErrors()) {
+			return "makePayment";
+		} else {
+			makePaymentService.bookFlight(payment);
+			//successful
+			System.out.println("flight booked successfully");
+			//refresh miles
+			User user = signUpService.findByUsername(userForm.getEmail());
+			int new_miles = user.getAir_miles();
+			userForm.setAir_miles(new_miles);			
+		}
+		
+		return "itinerary";
+	}
+	
+	
+}

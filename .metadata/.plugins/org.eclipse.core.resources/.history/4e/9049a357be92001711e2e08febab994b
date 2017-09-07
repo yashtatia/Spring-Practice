@@ -1,0 +1,24 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.pluralsight.model.MyBookingsReport;
+import com.pluralsight.model.UserPaymentDetails;
+
+@Repository("myBookingsRepository")
+public interface MyBookingsRepository extends JpaRepository<UserPaymentDetails, Integer>{
+
+	@Query("Select new com.pluralsight.model.MyBookingsReport(u.flight_id.route_id.source_id, u.flight_id.route_id.destination_id, u.flight_id.carrier_id, u.flight_id.seat_matrix.seat_type.description, u.seats, u.total_amount, u.booking_id, u.flight_id.flight_id, u.flight_id.date) " +  
+			"from UserPaymentDetails u where u.user_id.email = ?1")
+	List<MyBookingsReport> findAllBookings(String username);
+	
+	List<UserPaymentDetails> findAll();
+
+	void updateSeats(int flight_id, String seat_type, int seats);
+	
+	
+}

@@ -1,0 +1,14 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pluralsight.model.UserPaymentDetails;
+
+@Repository("myBookingsRepository")
+public interface MyBookingsRepository extends JpaRepository<UserPaymentDetails, Integer>{
+
+	List<MyBookingsReport> findAllBookings();
+}

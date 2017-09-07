@@ -1,0 +1,18 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.pluralsight.model.Airport;
+
+public interface AirportSearchRepository extends JpaRepository<Airport, String> {
+
+	List<Airport> findAll();
+
+	@Query("SELECT * FROM Airport a WHERE UPPER(a.aiport_name) LIKE CONCAT('%',UPPER(:partial_airport_name),'%')")
+	List<Airport> getFlightAjaxList(String partial_airport_name);
+	
+
+}

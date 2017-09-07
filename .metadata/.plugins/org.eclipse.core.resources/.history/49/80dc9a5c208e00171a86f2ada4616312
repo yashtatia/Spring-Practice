@@ -1,0 +1,22 @@
+package com.fightbooking.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.flightbooking.model.User;
+
+@Service("signUpService")
+public class signUpServiceImpl implements SignUpService {
+	
+	@Autowired
+	private SignUpRepository signUpRepository;
+	
+	@Override
+	@Transactional
+	public User save(User user) {
+		return signUpRepository.save(user);
+	}
+
+}

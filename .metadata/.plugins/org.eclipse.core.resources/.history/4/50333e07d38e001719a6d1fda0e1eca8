@@ -1,0 +1,17 @@
+package com.flightbooking.repository;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.flightbooking.model.User;
+
+@Repository("signUpRepository")
+public interface SignUpRepository extends CrudRepository<User, Integer> {
+	
+	@SuppressWarnings("unchecked")
+	User save(User user);
+
+	User findByEmail(String email);	
+
+}

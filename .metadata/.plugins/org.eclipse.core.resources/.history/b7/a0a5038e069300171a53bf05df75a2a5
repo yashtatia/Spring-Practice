@@ -1,0 +1,137 @@
+package com.pluralsight.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "flt_booking")
+public class UserPaymentDetails {
+
+	@Id
+	@GeneratedValue
+	private Integer booking_id;
+
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "user_id")
+	private User user_id;
+
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "flight_id")
+	private SubFlight flight_id;
+
+	@NotNull
+	@Column(name = "class")
+	private String flight_class;
+
+	@NotNull
+	private int seats;
+
+	private int miles_used;
+
+	private String cc_name;
+
+	private String cc_number;
+
+	private String cc_expiry;
+
+	private String cc_cvv;
+
+	private float total_amount;
+
+	public Integer getBooking_id() {
+		return booking_id;
+	}
+
+	public String getCc_cvv() {
+		return cc_cvv;
+	}
+
+	public String getCc_expiry() {
+		return cc_expiry;
+	}
+
+	public String getCc_name() {
+		return cc_name;
+	}
+
+	public String getCc_number() {
+		return cc_number;
+	}
+
+	public String getFlight_class() {
+		return flight_class;
+	}
+
+	public SubFlight getFlight_id() {
+		return flight_id;
+	}
+
+	public int getMiles_used() {
+		return miles_used;
+	}
+
+	public int getSeats() {
+		return seats;
+	}
+
+	public float getTotal_amount() {
+		return total_amount;
+	}
+
+	public User getUser_id() {
+		return user_id;
+	}
+
+	public void setBooking_id(Integer booking_id) {
+		this.booking_id = booking_id;
+	}
+
+	public void setCc_cvv(String cc_cvv) {
+		this.cc_cvv = cc_cvv;
+	}
+
+	public void setCc_expiry(String cc_expiry) {
+		this.cc_expiry = cc_expiry;
+	}
+
+	public void setCc_name(String cc_name) {
+		this.cc_name = cc_name;
+	}
+
+	public void setCc_number(String cc_number) {
+		this.cc_number = cc_number;
+	}
+
+	public void setFlight_class(String flight_class) {
+		this.flight_class = flight_class;
+	}
+
+	public void setFlight_id(SubFlight flight_id) {
+		this.flight_id = flight_id;
+	}
+
+	public void setMiles_used(int miles_used) {
+		this.miles_used = miles_used;
+	}
+
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
+	public void setTotal_amount(float total_amount) {
+		this.total_amount = total_amount;
+	}
+
+	public void setUser_id(User user_id) {
+		this.user_id = user_id;
+	}
+
+}

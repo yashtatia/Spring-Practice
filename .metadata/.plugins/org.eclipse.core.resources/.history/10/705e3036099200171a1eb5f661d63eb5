@@ -1,0 +1,10 @@
+package com.pluralsight.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class MyBookingsServiceImpl implements MyBookingsService {
+
+	@Autowired
+	private MyBookingsRepository myBookingsRepository;
+	
+}

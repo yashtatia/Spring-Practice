@@ -1,0 +1,3 @@
+1502692559487	Extract interface 'CustomerRepository'
+1502693528701	Extract interface 'CustomerService'
+1502694825713	Rename compilation unit 'CustomerSreviceImpl.java'

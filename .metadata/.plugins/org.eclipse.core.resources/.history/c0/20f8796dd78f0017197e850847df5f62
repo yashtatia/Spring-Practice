@@ -1,0 +1,48 @@
+package com.pluralsight.model;
+
+import java.sql.Time;
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "flt_flight")
+public class Flight {
+
+	@Id
+	@GeneratedValue
+	private Integer flight_id;
+
+	private String carrier_id;
+
+	private String flight_type;
+
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "route_id")
+	private Route route_id;
+
+	private int vacancy_eco;
+
+	private int vacancy_bus;
+
+	private int vacancy_elt;
+
+	private int price_eco;
+
+	private int price_bus;
+
+	private int price_elt;
+
+	private Date flight_date;
+
+	private Time flight_time;
+
+	
+}

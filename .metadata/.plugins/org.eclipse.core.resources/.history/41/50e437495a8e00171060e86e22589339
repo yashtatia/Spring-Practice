@@ -1,0 +1,9 @@
+package com.fightbooking.service;
+
+import com.flightbooking.model.UserPaymentDetails;
+
+public interface MakePaymentService {
+
+	UserPaymentDetails save(UserPaymentDetails userPaymentDetails);
+
+}

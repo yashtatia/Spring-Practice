@@ -1,0 +1,16 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.pluralsight.model.MyBookingsReport;
+
+@Repository("myBookingsRepository")
+public interface MyBookingsRepository extends JpaRepository<MyBookingsReport, Integer>{
+
+	@Query("")
+	List<MyBookingsReport> findAllBookings();
+}

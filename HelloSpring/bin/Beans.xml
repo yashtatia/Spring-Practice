@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Namaskara" class="Namaskara" scope="singleton" init-method="init" destroy-method="destroy">
+        <!-- setter injection 
+        <property name="message" value="Tokyo story" /> -->
+    </bean>
+    
+    <bean id="Message" class="Message" init-method="init" destroy-method="destroy">
+        <!-- setter injection 
+        <property name="message" value="Tokyo story" /> -->
+    </bean>
+    
+    <bean id="Message1" class="Message" init-method="init" destroy-method="destroy">
+        <!-- setter injection 
+        <property name="message" value="Tokyo story" /> -->
+    </bean>
+    
+</beans>
+
+<!-- constructor is called before init -->

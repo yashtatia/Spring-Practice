@@ -1,0 +1,18 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pluralsight.model.Airport;
+
+public interface AirportSearchRepository extends JpaRepository<Airport, String> {
+
+	List<Airport> findAll();
+
+	List<Airport> findAllFlights(String query);
+	
+	
+	
+
+}

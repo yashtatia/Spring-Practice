@@ -1,0 +1,90 @@
+package com.pluralsight.model;
+
+public class MyBookingsReport {
+
+	private String source;
+	private String destination;
+	private String carrier;
+	private String seat_type;
+	private int seats;
+	private Float total_amount;
+	private int booking_id;
+	private int flight_id;
+
+	public MyBookingsReport(String source, String destination, String carrier, String seat_type, int seats,
+			Float total_amount, int booking_id, int flight_id) {
+		this.source = source;
+		this.destination = destination;
+		this.carrier = carrier;
+		this.seat_type = seat_type;
+		this.seats = seats;
+		this.total_amount = total_amount;
+		this.booking_id = booking_id;
+		this.flight_id = flight_id;
+	}
+
+	public int getBooking_id() {
+		return booking_id;
+	}
+
+	public String getCarrier() {
+		return carrier;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public int getFlight_id() {
+		return flight_id;
+	}
+
+	public String getSeat_type() {
+		return seat_type;
+	}
+
+	public int getSeats() {
+		return seats;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public Float getTotal_amount() {
+		return total_amount;
+	}
+
+	public void setBooking_id(int booking_id) {
+		this.booking_id = booking_id;
+	}
+
+	public void setCarrier(String carrier) {
+		this.carrier = carrier;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public void setFlight_id(int flight_id) {
+		this.flight_id = flight_id;
+	}
+
+	public void setSeat_type(String seat_type) {
+		this.seat_type = seat_type;
+	}
+
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public void setTotal_amount(Float total_amount) {
+		this.total_amount = total_amount;
+	}
+
+}

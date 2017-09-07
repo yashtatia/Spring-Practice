@@ -1,0 +1,5 @@
+package com.flightbooking.repository;
+
+public interface MakePaymentRepository {
+
+}

@@ -1,0 +1,11 @@
+package com.fightbooking.service;
+
+import javax.transaction.Transactional;
+
+import com.flightbooking.model.UserPaymentDetails;
+
+public interface MakePaymentService {
+
+	UserPaymentDetails save(UserPaymentDetails userPaymentDetails);
+
+}

@@ -1,0 +1,49 @@
+package com.pluralsight.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "flt_booking")
+public class UserPaymentDetails {
+
+	@Id
+	@GeneratedValue
+	private Integer booking_id;
+
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name="user_id")
+	private User user_id;
+
+	@NotNull
+	private int flight_id;
+
+	@NotNull
+	@Column(name = "class")
+	private String flight_class;
+
+	@NotNull
+	private int seats;
+
+	private int miles_used;
+
+	private String cc_name;
+
+	private String cc_number;
+
+	private String cc_expiry;
+
+	private String cc_cvv;
+
+	private float total_amount;
+
+	
+
+}

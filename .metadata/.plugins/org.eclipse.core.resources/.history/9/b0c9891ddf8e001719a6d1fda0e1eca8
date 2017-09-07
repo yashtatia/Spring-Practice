@@ -1,0 +1,22 @@
+minutes.signup=Create Your Account
+minutes.activity=Activity
+minutes.button.enter=Enter Exercise
+minutes.exercised=Add Minutes Exercised
+minutes.goal=Our goal for the day is:
+minutes.text=Minutes Exercised For The Day Today:
+
+#################
+# Error messages
+#################
+
+Range.goal.minutes=Goal must be in the range 1 and 20
+
+email.required=Email is Required
+email.duplicate=Email already Registered
+email.invalid=Email is invalid
+password.required=Password is Required
+password.invalid=Minimum Password Size is 6
+fname.required=First Name is Required
+lname.required=Last Name is Required
+billing_address.required=Billing Address is Required
+

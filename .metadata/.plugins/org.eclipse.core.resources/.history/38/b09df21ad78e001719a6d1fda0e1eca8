@@ -1,0 +1,11 @@
+package com.pluralsight.service;
+
+import javax.validation.Valid;
+
+import com.pluralsight.model.UserPaymentDetails;
+
+public interface MakePaymentService {
+
+	UserPaymentDetails save(@Valid UserPaymentDetails userPaymentDetails);
+
+}

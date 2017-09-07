@@ -1,0 +1,9 @@
+package com.flightbooking.repository;
+
+import com.flightbooking.model.User;
+
+public interface SignUpRepository extends JpaRepository<User, int> {
+	
+	User save(User user);
+
+}

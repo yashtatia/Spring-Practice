@@ -1,0 +1,12 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import com.pluralsight.model.Airport;
+
+public interface AirportSearchRepository {
+
+	List<Airport> findAll();
+	
+
+}

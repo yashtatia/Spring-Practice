@@ -1,0 +1,56 @@
+package com.pluralsight.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="flt_fleet")
+public class Fleet {
+
+	@Id
+	@GeneratedValue
+	private Integer fleet_id;
+	
+	@OneToMany( mappedBy="fleet_id", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<SubFlight> flights = new ArrayList<SubFlight>();
+	
+	
+	@NotNull
+	private String manuf;
+	
+	@NotNull
+	private String model;
+
+	public String getManuf() {
+		return manuf;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public Integer getFleet_id() {
+		return fleet_id;
+	}
+
+	public void setManuf(String manuf) {
+		this.manuf = manuf;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public void setFleet_id(Integer fleet_id) {
+		this.fleet_id = fleet_id;
+	}
+}

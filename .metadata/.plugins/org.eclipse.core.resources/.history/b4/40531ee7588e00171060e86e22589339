@@ -1,0 +1,8 @@
+package com.flightbooking.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository("makePaymentRepository")
+public interface MakePaymentRepository {
+
+}

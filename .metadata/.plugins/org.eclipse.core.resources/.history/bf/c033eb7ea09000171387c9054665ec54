@@ -1,0 +1,24 @@
+package com.pluralsight.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.pluralsight.model.Airport;
+import com.pluralsight.model.Flight;
+import com.pluralsight.model.FlightsReport;
+
+@Repository("flightSearchRepository")
+public interface FlightSearchRepository extends JpaRepository<Flight, Integer> {
+
+		
+	@Query("Select new com.pluralsight.model.FlightsReport(r.source_id, r.destination_id, r.miles, f.date, f.departure_time, f.arrival_time, sm.vacant, sm.price) " +  
+			"from PathFlight p, SubFlight f, Route r, SeatMatrix sm where f.flight_id = p.flight_id and f.route_id = r.route_id and f.seat_matrix = sm.seat_matrix_id " +
+			"and r.source_id = ?1 and r.destination_id = ?2 and f.date = ?3 and sm.seat_type = ?4 and sm.vacant >= ?5")
+	List<FlightsReport> findAllFlights(String source_airport, String destination_airport, String date,
+			String seat_class, int seats);
+
+	
+}

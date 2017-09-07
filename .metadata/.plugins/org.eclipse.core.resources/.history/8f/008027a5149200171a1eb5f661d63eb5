@@ -1,0 +1,27 @@
+package com.pluralsight.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pluralsight.model.FlightSearch;
+import com.pluralsight.model.FlightsReport;
+import com.pluralsight.model.MyBookingsReport;
+import com.pluralsight.model.UserPaymentDetails;
+import com.pluralsight.repository.MyBookingsRepository;
+
+@Service("myBookingsService")
+public class MyBookingsServiceImpl implements MyBookingsService {
+
+	@Autowired
+	private MyBookingsRepository myBookingsRepository;
+
+	@Override
+	public List<MyBookingsReport> findAllBookings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

@@ -1,0 +1,26 @@
+package com.pluralsight.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="flt_journey")
+public class PathFlight {
+
+	@Id
+	@GeneratedValue
+	private Integer id;
+
+	@NotNull
+	private int order;
+
+	
+
+	public int getOrder() {
+		return order;
+	}
+
+}

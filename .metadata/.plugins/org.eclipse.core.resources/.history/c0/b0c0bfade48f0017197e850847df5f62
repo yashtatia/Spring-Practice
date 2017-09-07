@@ -1,0 +1,17 @@
+package com.pluralsight.service;
+
+import java.util.List;
+
+import com.pluralsight.model.Activity;
+import com.pluralsight.model.Flight;
+import com.pluralsight.model.FlightSearch;
+import com.pluralsight.model.SeatClasses;
+
+public interface FlightSearchService {
+
+	List<Flight> findAllFlights(FlightSearch flightSearch);
+
+	List<SeatClasses> findAllFlightClasses();
+
+
+}

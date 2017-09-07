@@ -1,0 +1,80 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<jsp:include page="header.jsp" />
+	
+	<header class="jumbotron" style="background-color: white;">
+	</header>
+	
+	<div class="container">
+		<div class="card" style="max-width: 80rem;">
+			<div class="card-header">
+				Bookings
+			</div>
+			<c:forEach items="${myBookingsReport}" var="booking">
+			
+			<div class="card-block">
+					<label>
+					<i class="fa fa-plane" aria-hidden="true"></i>
+				</label>		
+					<div class="row row-content">
+						
+						
+						
+											
+						<div class="col-md-2 col-sm-2 col-xs-12">
+								<div class="row row-content">
+									<div class="col-md-5 padding-left nopadding-right text-center padding-down" ><label style="font-size: 50px; padding-bottom: 20px;">${booking.day}</label></div>
+									<div class="col-md-7 nopadding" style="padding">
+										<span class="align-middle">${booking.weekday}</span>
+										<span class="align-bottom">${booking.month}'${booking.year}</span>
+									</div>
+								</div>
+								
+								
+									
+									
+								
+							
+						</div>
+						<div class="col-md-5 col-sm-5 col-xs-12 text-center align-text-middle" >
+							<label>${booking.source.airport_name} <i class="fa fa-fighter-jet" aria-hidden="true"></i> ${booking.destination.airport_name}</label>
+						</div>
+						<div class="col-md-5 col-sm-5 col-xs-12">
+							<div><label>${booking.booking_status}</label></div>
+							<div>
+								<label>Booking Id: ${booking.booking_id}</label>
+								<label>Booked on: ${booking.booked_on}</label>									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer text-muted">
+						<a href="#" class="btn btn-secondary">MANAGE BOOKING</a>
+						<a href="#" class="btn btn-secondary">PRINT TICKET</a>
+						<a href="cancelBooking.html?bookingId=${booking.booking_id}" class="btn btn-danger">Cancel Ticket</a>
+				</div>	
+						
+								
+							</c:forEach>
+			
+				
+				
+					<div class="header">
+						<h1>No Bookings</h1>
+					</div>
+					<div class="container" style="max-height: 300px;">
+						<div class="row row-content">
+							<div class="col-lg-offset-5">
+								<a href="index.jsp" class="btn btn-large btn-primary" id="qw">Book flight</a>
+							</div>	
+						</div>			  
+					</div>
+		</div>
+	
+	</div>
+	
+
+<jsp:include page="footer.jsp" />

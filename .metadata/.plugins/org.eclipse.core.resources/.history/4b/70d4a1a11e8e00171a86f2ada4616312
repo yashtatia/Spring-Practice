@@ -1,0 +1,5 @@
+package com.fightbooking.service;
+
+public class signUpServiceImpl {
+
+}

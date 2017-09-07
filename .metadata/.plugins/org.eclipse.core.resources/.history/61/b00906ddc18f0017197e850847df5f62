@@ -1,0 +1,50 @@
+package com.pluralsight.model;
+
+import java.sql.Date;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "flt_sub_flight")
+public class SubFlight {
+
+	@Id
+	@GeneratedValue
+	private Integer flight_id;
+	
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "fleet_id")
+	private Fleet fleet_id;
+
+	@OneToMany( mappedBy="flight_id", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<UserPaymentDetails> paymentDetails = new ArrayList<UserPaymentDetails>();
+	
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "route_id")
+	private Route route_id;
+
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "carrier_id")
+	private Carrier carrier_id;
+
+	private Date date;
+
+	private Time time;
+
+	
+}

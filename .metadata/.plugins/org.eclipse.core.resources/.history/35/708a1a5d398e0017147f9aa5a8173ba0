@@ -1,0 +1,36 @@
+package com.flightbooking.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="flt_booking")
+public class UserPaymentDetails {
+
+	@Id
+	@GeneratedValue
+	private Integer booking_id;
+	
+	private int user_id;
+	
+	private int flight_id;
+	
+	private String flight_class;
+	
+	private int seats;
+	
+	private int miles_used;
+	
+	private String cc_number;
+	
+	private String cc_expiry;
+
+	private String cc_cvv;
+	
+	private float total_amount;
+	
+	
+	
+}

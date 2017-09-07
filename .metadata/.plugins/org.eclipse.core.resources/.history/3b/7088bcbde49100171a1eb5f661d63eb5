@@ -1,0 +1,10 @@
+package com.pluralsight.model;
+
+public class Itinerary {
+
+	private String source_id;
+	private String source_name;
+	private String destination_id;
+	private String destination_name;
+	
+}

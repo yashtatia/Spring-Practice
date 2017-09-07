@@ -1,0 +1,17 @@
+package com.pluralsight.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.pluralsight.model.LogInDetails;
+
+@Controller
+public class MyBookingsController {
+
+	@RequestMapping(value="myBookings", method=RequestMethod.GET)
+	public String getBookings(@ModelAttribute("logInForm") LogInDetails logInForm) {
+		return "myBookings";
+	}
+}

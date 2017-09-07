@@ -1,0 +1,155 @@
+package com.pluralsight.model;
+
+import java.util.Date;
+
+public class MyBookingsReport {
+
+	private Airport source;
+	private Airport destination;
+	private Carrier carrier;
+	private String seat_type;
+	private int seats;
+	private Float total_amount;
+	private int booking_id;
+	private int flight_id;
+	private Date flight_date;
+	private String day;
+	private String month;
+	private String year;
+
+	private String weekday;
+
+	public MyBookingsReport(Airport source, Airport destination, Carrier carrier, String seat_type, int seats,
+			Float total_amount, int booking_id, int flight_id, Date flight_date) {
+		this.source = source;
+		this.destination = destination;
+		this.carrier = carrier;
+		this.seat_type = seat_type;
+		this.seats = seats;
+		this.total_amount = total_amount;
+		this.booking_id = booking_id;
+		this.flight_id = flight_id;
+		this.flight_date = flight_date;
+	}
+
+	public int getBooking_id() {
+		return booking_id;
+	}
+
+	public Carrier getCarrier() {
+		return carrier;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public Airport getDestination() {
+		return destination;
+	}
+
+	public Date getFlight_date() {
+		return flight_date;
+	}
+
+	public int getFlight_id() {
+		return flight_id;
+	}
+
+	@SuppressWarnings("deprecation")
+	public String getMonth() {
+		int m = flight_date.getMonth();
+		
+		return month;
+	}
+
+	public String getSeat_type() {
+		return seat_type;
+	}
+
+	public int getSeats() {
+		return seats;
+	}
+
+	public Airport getSource() {
+		return source;
+	}
+
+	public Float getTotal_amount() {
+		return total_amount;
+	}
+
+	@SuppressWarnings("deprecation")
+	public String getWeekday() {
+		int w = flight_date.getDay();
+		String weekday ="";
+		switch(w) {
+		case 0:
+			weekday = "Sunday";
+			break;
+		case 1:
+			weekday = "Monday";
+			break;
+		case 2:
+			weekday = "Tuesday";
+			break;
+		case 3:
+			weekday = "Wednesday";
+			break;
+		case 4:
+			weekday = "Thursday";
+			break;
+		case 5:
+			weekday = "Friday";
+			break;
+		case 6:
+			weekday = "Saturday";
+			break;
+		}
+		return weekday;
+	}
+
+	@SuppressWarnings("deprecation")
+	public String getYear() {
+		int y = flight_date.getYear() + 1900;
+		String year = ""+ y;
+		return year;
+	}
+
+	public void setBooking_id(int booking_id) {
+		this.booking_id = booking_id;
+	}
+
+	public void setCarrier(Carrier carrier) {
+		this.carrier = carrier;
+	}
+
+	public void setDestination(Airport destination) {
+		this.destination = destination;
+	}
+
+	public void setFlight_date(Date flight_date) {
+		this.flight_date = flight_date;
+	}
+
+	public void setFlight_id(int flight_id) {
+		this.flight_id = flight_id;
+	}
+
+	public void setSeat_type(String seat_type) {
+		this.seat_type = seat_type;
+	}
+
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
+	public void setSource(Airport source) {
+		this.source = source;
+	}
+
+	public void setTotal_amount(Float total_amount) {
+		this.total_amount = total_amount;
+	}
+
+}
