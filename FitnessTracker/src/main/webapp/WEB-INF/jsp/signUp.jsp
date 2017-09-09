@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="row row-content">
 	        <h1 align="center">
-	          <spring:message code="minutes.signup"/>
+	          <spring:message code="signup.title"/>
 	        </h1>
 	     </div>
 	      <a class="btn" href="?language=en">
@@ -35,14 +35,16 @@
 	      <br/>
 		<div class="row">
 		    <div class="col-lg-4 col-lg-offset-4">
-		        <h3>Log In</h3>
+		        <h3><spring:message code="signup.login"/></h3>
 		        <form:form commandName="logInForm" action="logIn.html" class="form-horizontal" method="POST">
 		            <div class="form-group">
 		                <label class="sr-only" for="InputEmail">Email address</label>
+		                <form:errors path="username" cssClass="error" />
 		                <form:input path="username" type="email" class="form-control" id="Email" placeholder="Email" name="email" />
 		            </div>
 		            <div class="form-group">   
 		                <label class="sr-only" for="Password">Password</label>
+		                <form:errors path="password" cssClass="error" />
 		                <form:input path="password" type="password" class="form-control" id="Password" placeholder="Password" name="password" />
 		            </div>
 		            <button type="submit" class="btn btn-default btn-info">Log in</button>
@@ -50,7 +52,7 @@
 		    </div>
 		
 		    <div class="col-lg-4 col-lg-offset-4" style="margin-top:40px;">
-		    <h3>Sign Up</h3>
+		    <h3><spring:message code="signup.signup"/></h3>
 		        <form:form modelAttribute="userForm" class="form-horizontal" method="POST" id="signUpForm">
 		        	
 		            <div class="form-group">

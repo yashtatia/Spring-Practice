@@ -51,7 +51,7 @@ public class SignUpController {
 	@RequestMapping(value="signUp", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute("userForm") User user, BindingResult result, HttpSession session) {
 		System.out.println("signup - post");
-		userValidator.validate(user, result);
+		userValidator.validateSignUp(user, result);
 		
 		System.out.println("Result has errors: " + result.hasErrors());
 		
@@ -72,21 +72,19 @@ public class SignUpController {
 	}
 	
 	@RequestMapping(value="logIn",  method=RequestMethod.POST)
-	public String verfiyUser(@Valid @ModelAttribute("logInForm") LogInDetails logInDetails, @ModelAttribute("userForm") User userForm, BindingResult result) {
+	public String verfiyUser(@Valid @ModelAttribute("logInForm") LogInDetails logInDetails, BindingResult result, @ModelAttribute("userForm") User userForm) {
 		System.out.println("login - post");
 		boolean isLoggedIn = false;
 		User user;
+		userValidator.validateLogin(logInDetails, result);
 		System.out.println("Result has errors: " + result.hasErrors());
 		System.out.println("Email updated: " + logInDetails.getUsername());
 		
 		if (result.hasErrors()) {
 			return "signUp";
-		} else {
-			user = signUpService.validateUser(logInDetails.getUsername(), logInDetails.getPassword());
-			isLoggedIn = user != null;
-			if (!isLoggedIn) {
-				return "signUp";
-			}
+		} 
+			user = signUpService.findByUsername(logInDetails.getUsername());
+			
 			System.out.println("user air miles" + user.getAir_miles());
 			userForm.setAir_miles(user.getAir_miles());
 			userForm.setFname(user.getFname());
@@ -97,7 +95,7 @@ public class SignUpController {
 			isLoggedIn = true;
 			logInDetails.setLoggedIn(isLoggedIn);
 			
-		}
+		
 		return "redirect:index.jsp";
 	}
 	

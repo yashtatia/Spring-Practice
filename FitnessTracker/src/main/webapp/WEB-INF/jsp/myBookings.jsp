@@ -54,7 +54,7 @@
 				<div class="card-footer text-muted">
 						<a href="manageTicket.html?bookingId=${booking.booking_id}" class="btn btn-secondary">MANAGE BOOKING</a>
 						<a href="#" class="btn btn-secondary">PRINT TICKET</a>
-						<a href="cancelBooking.html?bookingId=${booking.booking_id}" class="btn btn-danger">Cancel Ticket</a>
+						<button onclick="cancel(${booking.booking_id})" class="btn btn-danger">Cancel Ticket</button>
 				</div>	
 						
 								

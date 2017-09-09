@@ -29,7 +29,11 @@ public class SignUpServiceImpl implements SignUpService {
 
 	@Override
 	public User validateUser(String username, String password) {
-		return signUpRepository.findByUsernamePassword(username, password);
+		User user = signUpRepository.findByEmail(username);
+		if(!user.getPassword().equals(password)) {
+			user = null;
+		}
+		return user;
 	}
 	
 	

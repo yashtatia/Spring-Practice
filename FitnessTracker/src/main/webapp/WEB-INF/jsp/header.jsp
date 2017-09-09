@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/sweet-alert.css">
+	<script type="text/javascript" src="assets/js/sweet-alert.js"></script>
 	<style type="text/css">
 		.nopadding {
 		   padding: 0 !important;

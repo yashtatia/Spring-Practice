@@ -15,9 +15,6 @@ public interface SignUpRepository extends JpaRepository<User, Integer> {
 
 	User findByEmail(String username);
 
-	@Query("Select user from User user where email=?1 and password=?2")
-	User findByUsernamePassword(String username, String password);
-
 	@Modifying
 	@Query("Update User user set user.air_miles = user.air_miles - ?1 + ?2 where user.email=?3 ")
 	void changeMiles(int miles_used, int miles_earned, String user_email);	
