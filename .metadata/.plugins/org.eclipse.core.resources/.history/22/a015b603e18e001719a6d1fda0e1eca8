@@ -1,9 +1,0 @@
-package com.pluralsight.controller;
-
-import org.springframework.stereotype.Service;
-
-@Service("logInService")
-public class LogInService {
-
-	
-}

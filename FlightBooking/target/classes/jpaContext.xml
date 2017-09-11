@@ -11,9 +11,9 @@
 	
 	
 	<context:annotation-config />
-	<context:component-scan base-package="com.flightbooking" />
+	<context:component-scan base-package="com.pluralsight" />
 
-	<jpa:repositories base-package="com.flightbooking.repository" />
+	<jpa:repositories base-package="com.pluralsight.repository" />
 	
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 	
@@ -42,11 +42,9 @@
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/sap_flight_v1_0?autoReconnect=true" />
+		<property name="url" value="jdbc:mysql://localhost:3306/fitnesstracker?autoReconnect=true" />
 		<property name="username" value="root" />
 		<property name="password" value="Rajesh@9838" />
 	</bean>
 
 </beans>
-
-<!-- 	<property name="url" value="jdbc:mysql://10.53.32.16:3306/sap_flight_v1_0?autoReconnect=true" /> -->

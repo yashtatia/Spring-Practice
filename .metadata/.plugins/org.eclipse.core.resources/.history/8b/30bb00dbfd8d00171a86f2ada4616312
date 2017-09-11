@@ -1,8 +1,0 @@
-package snippet;
-
-public class Snippet {
-	public static void main(String[] args) {
-		sap_flight_v1_0?autoReconnect=true&useSSL=false
-	}
-}
-

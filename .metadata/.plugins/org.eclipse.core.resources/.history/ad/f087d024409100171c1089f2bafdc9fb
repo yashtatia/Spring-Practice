@@ -1,7 +1,0 @@
-package com.pluralsight.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface GetFareRepository extends JpaRepository<SubFlight, Integer>{
-
-}

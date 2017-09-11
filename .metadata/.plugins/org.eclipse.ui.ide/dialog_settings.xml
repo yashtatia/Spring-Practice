@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\I341417\eclipse-workspace\FlightBooking"/>
 		<item value="C:\Users\I341417\Documents\My Received Files\flight_booking_system\flight_booking_system"/>
 		<item value="C:\Users\I341417\Downloads\spring_mvc_base-master"/>
 		<item value="C:\Users\I341417\Documents\Spring\Learning\sflight"/>

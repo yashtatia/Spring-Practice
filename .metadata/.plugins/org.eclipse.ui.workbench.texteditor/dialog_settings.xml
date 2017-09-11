@@ -6,29 +6,32 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getP" key="selection"/>
+		<item value="FlightBooking" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="FitnessTracker"/>
+			<item value="FlightBooking"/>
+			<item value="signUpService"/>
+			<item value="validateUser"/>
+			<item value="user"/>
+			<item value="source"/>
+			<item value="list"/>
+			<item value="&lt;div class=&quot;row row-content&quot;&gt;"/>
+			<item value="duration"/>
+			<item value="&lt;i"/>
+			<item value="error"/>
 			<item value="getp"/>
 			<item value="is"/>
 			<item value="payment"/>
-			<item value="duration"/>
 			<item value="print"/>
-			<item value="saveEntryToUserBookingTable"/>
-			<item value="booked"/>
-			<item value="fa fa"/>
-			<item value="empty"/>
-			<item value="span"/>
-			<item value="=="/>
-			<item value="last_name"/>
-			<item value="first_name"/>
-			<item value="block"/>
-			<item value="seat"/>
 		</list>
 		<list key="replacehistory">
+			<item value="FlightBooking"/>
+			<item value="FitnessTracker"/>
+			<item value="&lt;li class=&quot;list-group-item&quot;&gt;"/>
 			<item value="label"/>
 			<item value="cc_expiry"/>
 			<item value="cc_cvv`"/>

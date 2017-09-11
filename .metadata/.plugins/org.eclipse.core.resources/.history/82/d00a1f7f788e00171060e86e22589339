@@ -1,8 +1,0 @@
-package com.flightbooking.model;
-
-public class LogInDetails {
-
-	private String username;
-	
-	private String password;
-}

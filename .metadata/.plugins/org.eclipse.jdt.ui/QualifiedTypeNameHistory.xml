@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.pluralsight.model.Flight"/>
 <fullyQualifiedTypeName name="com.pluralsight.model.Fleet"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
@@ -35,7 +34,6 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
 <fullyQualifiedTypeName name="com.pluralsight.model.FlightSelected"/>
-<fullyQualifiedTypeName name="com.pluralsight.model.Itinerary"/>
 <fullyQualifiedTypeName name="com.pluralsight.model.User"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
@@ -46,7 +44,6 @@
 <fullyQualifiedTypeName name="com.pluralsight.service.SignUpService"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
 <fullyQualifiedTypeName name="com.pluralsight.model.MyBookingsReport"/>
@@ -58,6 +55,9 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.ParseException"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="com.pluralsight.model.UserPaymentDetails"/>
 <fullyQualifiedTypeName name="com.pluralsight.model.PaymentForm"/>
+<fullyQualifiedTypeName name="com.pluralsight.model.Itinerary"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.pluralsight.model.UserPaymentDetails"/>
+<fullyQualifiedTypeName name="com.pluralsight.model.TicketDetails"/>
 </qualifiedTypeNameHistroy>

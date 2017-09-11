@@ -1,9 +1,0 @@
-package com.fightbooking.service;
-
-import org.springframework.stereotype.Service;
-
-@Service("signUpService")
-public class signUpServiceImpl {
-	
-
-}

@@ -1,9 +1,0 @@
-package com.fightbooking.service;
-
-import com.flightbooking.model.User;
-
-public interface SignUpService {
-
-	User save(User user);
-
-}

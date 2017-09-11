@@ -1,7 +1,0 @@
-package com.fightbooking.service;
-
-public interface SignUpService {
-
-	User save(User user);
-
-}
